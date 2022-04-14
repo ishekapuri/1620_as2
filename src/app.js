@@ -10,28 +10,10 @@ const notes = [
 
 const addBtn = document.querySelector(".fa-circle-plus")
 const newNote = document.querySelector(".create-note-area")
-const textBox = `<textarea id ="textArea"rows="30" cols="60"></textarea>`
+const textBox = `<textarea id ="textArea"rows="30" cols="45"></textarea>`
 const writeNote = document.querySelector(".write-note-area")
 const readNote = document.querySelector(".read-note-area")
 const notesList = document.querySelector(".notes-list")
-const toggle = document.querySelector('.main-container')
-
-//saveBtn
-
-const saveBtn = document.createElement('button')
-saveBtn.innerHTML = 'Save'
-saveBtn.id = 'save-button';
-
-//cancelBtn
-
-
-const cancelBtn = document.createElement('button')
-cancelBtn.innerHTML = 'Cancel'
-cancelBtn.id = 'cancel-button';
-
-//closeNoteBtn
-const closeNoteBtn = document.createElement('button')
-closeNoteBtn.innerHTML = 'Close'
 
 //add new note area
 function newNoteArea() {
@@ -39,10 +21,15 @@ function newNoteArea() {
   writeNote.appendChild(saveBtn)
   writeNote.appendChild(cancelBtn)
 }
-
 addBtn.addEventListener('click', newNoteArea)
+const closeNoteBtn = document.createElement('button')
+closeNoteBtn.innerHTML = 'Close'
+
 
 //cancelBtn function
+const cancelBtn = document.createElement('button')
+cancelBtn.innerHTML = 'Cancel'
+cancelBtn.id = 'cancel-button';
 function cancelFunc() {
   cancelBtn.remove()
   saveBtn.remove()
@@ -56,6 +43,9 @@ function cancelFunc() {
 cancelBtn.addEventListener('click', cancelFunc)
 
 //saveBtn function
+const saveBtn = document.createElement('button')
+saveBtn.innerHTML = 'Save'
+saveBtn.id = 'save-button';
 function saveFunc() {
   let txtarea = document.querySelector('#textArea').value
 	let title,body;
@@ -91,12 +81,5 @@ function readSavedNote() {
 function cancelSavedNote() {
     readNote.innerHTML ='';
   }
- 
 
-//dark mode
-const darkMode = document.querySelector(".theme-toggle")
-const lightTheme = document.querySelector('.light-theme')
-function nightMode(){
-  lightTheme.classList.toggle("dark-theme") 
-}
-darkMode.addEventListener('change', nightMode) 
+ 
