@@ -134,3 +134,15 @@ footer p {
   color: var(--text);
   font-size: var(--lrg-txt);
 }
+
+.write-note-area {
+  color: var(--drk-white);
+}
+
+.read-note-area {
+  color: var(--not-white)
+}
+
+button {
+  color: var(--not-green);
+}
